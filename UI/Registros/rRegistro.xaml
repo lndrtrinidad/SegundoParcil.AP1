@@ -10,10 +10,10 @@
         <StackPanel Orientation="Vertical" Margin="10,0,10,0">
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Id:"/>
+                <Label Content="Proyecto Id:"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="IdTextBox"  Width="100" Height="18" Margin="5,0"/>
+                    <TextBox x:Name="IdTextBox" Text="{Binding ProyectoId}"  Width="100" Height="18" Margin="5,0"/>
                     <Button x:Name="BuscarButton" Margin="5,0">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/images.png" Height="20"/>

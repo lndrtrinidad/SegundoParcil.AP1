@@ -11,5 +11,6 @@ namespace SegundoParcial.AP1.Entidades
         public int ProyectoId { get; set; }
         public DateTime fecha { get; set; } = DateTime.Now;
         public string Descripcion { get; set; }
+        
     }
 }

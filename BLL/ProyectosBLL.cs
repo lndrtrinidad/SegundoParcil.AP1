@@ -133,6 +133,26 @@ namespace SegundoParcial.AP1.BLL
             }
             return encontrado;
         }
+        public static Proyecto Buscar(int Id)
+        {
+            Proyecto proyecto = new Proyecto();
+            Contexto contexto = new Contexto();
 
+            try
+            {
+                proyecto = contexto.Proyecto
+                    .Where(p => p.ProyectoId == Id)
+                    .SingleOrDefault();
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return proyecto;
+        }
     }
 }

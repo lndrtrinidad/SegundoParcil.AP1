@@ -7,16 +7,16 @@ using System.Text;
 
 namespace SegundoParcial.AP1.BLL
 {
-    public class DetalleTareaBLL
+    public class TareasBLL
     {
-        public static List<Proyecto> GetList()
+        public static List<Tareas> GetList()
         {
-            List<Proyecto> proyectos = new List<Proyecto>();
+            List<Tareas> tareas = new List<Tareas>();
             Contexto contexto = new Contexto();
 
             try
             {
-                proyectos = contexto.Proyecto.ToList();
+                tareas = contexto.Tareas.ToList();
             }
             catch (Exception)
             {
@@ -26,7 +26,7 @@ namespace SegundoParcial.AP1.BLL
             {
                 contexto.Dispose();
             }
-            return proyectos;
+            return tareas;
         }
     }
 }

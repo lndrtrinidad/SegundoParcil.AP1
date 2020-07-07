@@ -15,7 +15,7 @@ namespace SegundoParcial.AP1.BLL
         {
             bool paso;
 
-            if (!Existe(proyecto.ProyectoId))
+            if (!Existe(proyecto.TareaId))
                 paso = Insertar(proyecto);
             else
                 paso = Modificar(proyecto);
@@ -48,9 +48,9 @@ namespace SegundoParcial.AP1.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete From DetalleTarea Where Proyecto={proyecto.ProyectoId}");
+                contexto.Database.ExecuteSqlRaw($"Delete From DetalleTarea Where Proyecto={proyecto.TareaId}");
 
-                foreach(var item in proyecto.Descripcion)
+                foreach(var item in proyecto.TipoTarea)
                 {
                     contexto.Entry(proyecto).State = EntityState.Added;
                 }
@@ -102,7 +102,7 @@ namespace SegundoParcial.AP1.BLL
             {
                 lista = contexto.Proyecto.Where(criterio).ToList();
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
@@ -120,7 +120,7 @@ namespace SegundoParcial.AP1.BLL
             Contexto contexto = new Contexto();
             try
             {
-                encontrado = contexto.Proyecto.Any(p => p.ProyectoId == Id);
+                encontrado = contexto.Proyecto.Any(p => p.TareaId == Id);
 
             }
             catch(Exception)
@@ -141,7 +141,7 @@ namespace SegundoParcial.AP1.BLL
             try
             {
                 proyecto = contexto.Proyecto
-                    .Where(p => p.ProyectoId == Id)
+                    .Where(p => p.TareaId == Id)
                     .SingleOrDefault();
             }
             catch(Exception)

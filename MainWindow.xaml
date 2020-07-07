@@ -8,12 +8,13 @@
         Title="Menu Pricipal" Height="450" Width="600">
     <Grid>
         <StackPanel>
-            <Menu Height="18">
+            <Menu Height="24" FontSize="15">
                 <MenuItem Header="Registros">
-
+                    <MenuItem x:Name="rRegistroMenuItem" Click="rRegistroMenuItem_Click" Header="Registrar Proyecto"/>
                 </MenuItem>
-                <MenuItem Header="Consultas">
 
+                <MenuItem Header="Consultas">
+                    <MenuItem x:Name="cConsultaMenuItem" Click="cConsultaMenuItem_Click" Header="Consultar Proyecto"/>
                 </MenuItem>
 
             </Menu>

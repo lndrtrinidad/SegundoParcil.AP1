@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SegundoParcial.AP1.UI.Consultas;
+using SegundoParcial.AP1.UI.Registros;
 
 namespace SegundoParcial.AP1
 {
@@ -23,6 +25,18 @@ namespace SegundoParcial.AP1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void rRegistroMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rRegistro rRegistro = new rRegistro();
+            rRegistro.Show();
+        }
+
+        private void cConsultaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cConsultas cConsulta = new cConsultas();
+            cConsulta.Show();
         }
     }
 }

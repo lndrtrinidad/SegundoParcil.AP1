@@ -14,5 +14,10 @@ namespace SegundoParcial.AP1.BLL
 
             return retorno;
         }
+
+        internal static int ToInt(string text)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

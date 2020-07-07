@@ -9,7 +9,7 @@ namespace SegundoParcial.AP1.DAL
     public class Contexto : DbContext
     {
         public DbSet<Proyecto> Proyecto { get; set; }
-        public DbSet<DetalleTarea> DetalleTarea { get; set; }
+        public DbSet<Tareas> Tareas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,10 +19,10 @@ namespace SegundoParcial.AP1.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Crear 4 proyectos
-            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { ProyectoId = 1, Descripcion = "Analicis", fecha = DateTime.Now});
-            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { ProyectoId = 2, Descripcion = "Programacion", fecha = DateTime.Now });
-            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { ProyectoId = 3, Descripcion = "Prueba", fecha = DateTime.Now });
-            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { ProyectoId = 4, Descripcion = "Diseño", fecha = DateTime.Now });
+            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { TareaId = 1, TipoTarea = "Analicis"});
+            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { TareaId = 2, TipoTarea = "Programacion"});
+            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { TareaId = 3, TipoTarea = "Prueba"});
+            modelBuilder.Entity<Proyecto>().HasData(new Proyecto { TareaId = 4, TipoTarea = "Diseño"});
         }
     }
 }
